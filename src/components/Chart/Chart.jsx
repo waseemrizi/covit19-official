@@ -17,6 +17,7 @@ const Chart = () => {
 
   const lineChart = (
     dailyData.length
+  
      ? (
       <Line
         data={{
@@ -26,6 +27,7 @@ const Chart = () => {
             label: 'Infected',
             borderColor: '#3333ff',
             fill: true,
+            
           }, {
             data: dailyData.map((data) => data.deaths),
             label: 'Deaths',
