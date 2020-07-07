@@ -23,5 +23,6 @@ export const fetchDailyData = async () => {
       date: dailtData.date.reportDate,
     }))
     return modifiedData;
+    
   } catch (error) {}
 };
