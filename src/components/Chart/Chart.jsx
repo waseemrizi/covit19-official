@@ -1,38 +1,30 @@
-import React, {useState , useEffect} from 'react';
-import {fetchDailyData} from '../../api';
-import { Line } from 'react-chartjs-2';
+import React, { useState, useEffect } from "react";
+import { fetchDailyData } from "../../api";
+import { Line } from "react-chartjs-2";
 
 //import styles from './Chart.module.css';
 
 const Chart = () => {
-
-  const [dailyData , setDailyData] = useState({});
+  const [dailyData, setDailyData] = useState([]);
 
   useEffect(() => {
-
-    const fetchApi = async ()=>{
+    const fetchApi = async () => {
       setDailyData(await fetchDailyData());
-    }
-    console.log(dailyData);
+    };
+    // console.log(dailyData);
     fetchApi();
-  }, [])
+  }, []);
 
-  const lineChar = (
-    dailyData[0]
-    ?( 
+  const lineChar = dailyData ? (
     <Line
-    data={{
-      labels: '',
-      datasets: [{}, {}],  
-    }}
-    />) : null
-  );
+      data={{
+        labels: "",
+        datasets: [{}, {}],
+      }}
+    />
+  ) : null;
 
-  return (
-    <div>
-      <h1>Charts</h1>
-    </div>
-  );
+  return <div>{/* <h1>{lineChar}</h1> */}</div>;
 };
 
 export default Chart;

@@ -1,30 +1,22 @@
-import axios from 'axios';
+import axios from "axios";
 
-const url = 'https://covid19.mathdro.id/api';
+const url = "https://covid19.mathdro.id/api";
 
 export const fetchData = async () => {
-    try {
-        const {data: {confirmed, recovered, deaths, lastUpdate}} = await axios.get(url);
+  try {
+    const {
+      data: { confirmed, recovered, deaths, lastUpdate },
+    } = await axios.get(url);
 
-        const modifiedData = {confirmed, recovered, deaths,lastUpdate};
-        
-        return modifiedData;
-     
-    } catch (error) {
-        
-    }
-    
-}
+    const modifiedData = { confirmed, recovered, deaths, lastUpdate };
+
+    return modifiedData;
+  } catch (error) {}
+};
 
 export const fetchDailyData = async () => {
-    try {
-        
-        const { fetchData }  = await axios.url(`${url}/daily`);
-        console.log(fetchData);
-
-
-    } catch (error) {
-        
-    }
-}
-
+  try {
+    const { fetchData } = await axios.url(`${url}/daily`);
+    // console.log(fetchData)
+  } catch (error) {}
+};
