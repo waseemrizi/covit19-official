@@ -1,4 +1,11 @@
 .formControl {
-  width: 30%;
-  margin-bottom: 30px !important;
+  width: 40%;
+  margin-bottom: 50px !important;
+  background-color: white !important;
+  
+  
+  
+}
+.formControl :hover {
+  color:black !important;
 }
